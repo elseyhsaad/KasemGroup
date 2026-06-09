@@ -1,0 +1,1502 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KASEM GROUP</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&amp;family=Playfair+Display:wght@600;700;800&amp;family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest: #0d2d24;
+      --forest-2: #133e31;
+      --charcoal: #1c1f1d;
+      --gold: #b89a5f;
+      --stone: #e9e4db;
+      --cream: #f6f3ed;
+      --muted: #7c817b;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      width: 100%;
+      font-family: 'Raleway', sans-serif;
+      background: #f6f3ed;
+      color: #1b201d;
+      overflow-x: hidden;
+    }
+
+    .serif { font-family: 'Playfair Display', serif; }
+
+    [dir="rtl"] body {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    [dir="rtl"] .serif {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+    }
+
+    [dir="rtl"] h1,
+    [dir="rtl"] h2,
+    [dir="rtl"] h3 {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    [dir="rtl"] h4,
+    [dir="rtl"] h5,
+    [dir="rtl"] h6 {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0em;
+    }
+
+    [dir="rtl"] .canva-text {
+      font-family: 'Cairo', sans-serif;
+    }
+    
+    /* Arabic Typography - Modern & Contemporary */
+    [dir="rtl"] .lux-line::before {
+      content: "";
+      display: inline-block;
+      width: 54px;
+      height: 2px;
+      margin-inline-end: 14px;
+      background: var(--gold);
+      vertical-align: middle;
+    }
+
+    .hero-bg {
+      animation: heroScale 16s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+
+    @keyframes heroScale {
+      from { transform: scale(1.02); }
+      to { transform: scale(1.11); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp .9s ease forwards;
+    }
+    .delay-1 { animation-delay: .15s; }
+    .delay-2 { animation-delay: .3s; }
+    .delay-3 { animation-delay: .45s; }
+    .delay-4 { animation-delay: .6s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-scrolled {
+      background: rgba(13,45,36,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    /* Mobile Menu Animations */
+    #mobileMenu {
+      animation: slideInRight .5s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+    }
+    #mobileMenu.hidden {
+      animation: slideOutRight .4s cubic-bezier(0.36, 0, 0.66, -0.56) forwards;
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOutRight {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+
+    .mobile-link {
+      opacity: 0;
+      transform: translateX(20px);
+      animation: fadeLinkIn .5s ease forwards;
+    }
+
+    .mobile-link:nth-child(1) { animation-delay: .1s; }
+    .mobile-link:nth-child(2) { animation-delay: .2s; }
+    .mobile-link:nth-child(3) { animation-delay: .3s; }
+    .mobile-link:nth-child(4) { animation-delay: .4s; }
+    .mobile-link:nth-child(5) { animation-delay: .5s; }
+
+    @keyframes fadeLinkIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .pattern-panel {
+      background-color: var(--forest);
+      background-image:
+        linear-gradient(45deg, rgba(184,154,95,.08) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(184,154,95,.08) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(184,154,95,.08) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(184,154,95,.08) 75%);
+      background-size: 34px 34px;
+      background-position: 0 0, 0 17px, 17px -17px, -17px 0px;
+    }
+
+    .lux-line::before {
+      content: "";
+      display: inline-block;
+      width: 54px;
+      height: 1px;
+      margin-inline-end: 14px;
+      background: var(--gold);
+      vertical-align: middle;
+    }
+
+    .product-card img,
+    .gallery-card img {
+      transition: transform .8s ease;
+    }
+    .product-card:hover img,
+    .gallery-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .product-card .card-overlay {
+      background: linear-gradient(to top, rgba(8,18,14,.88), rgba(8,18,14,.1));
+    }
+
+    .focus-ring:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .map-grid {
+      background:
+        linear-gradient(rgba(13,45,36,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13,45,36,.06) 1px, transparent 1px),
+        #e8e1d6;
+      background-size: 28px 28px;
+    }
+
+    .toast {
+      transform: translateY(10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all .3s ease;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    [dir="ltr"] .lux-line::before {
+      margin-inline-start: 0;
+      margin-inline-end: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .desktop-nav { display: none; }
+    }
+  </style>
+  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
+ <script src="/_sdk/telemetry_sdk.js"></script></head>
+ <body data-template-id="__page-root" class="w-full">
+  <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+   <div class="w-full max-w-[1500px] mx-auto px-4 sm:px-6 md:px-10 lg:px-14 py-4 sm:py-5 flex items-center justify-between">
+    <a href="#home" class="focus-ring flex items-center gap-2 sm:gap-3">
+<img src="kasem-logo.png" style="height: 120px; width: auto;"
+     alt="KASEM GROUP Logo"
+     class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-contain">       <lineargradient id="kasem-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#d4ba7a;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#b89a5f;stop-opacity:1" />
+       </lineargradient>
+      </defs> <!-- Modern building tower structure --> <!-- Left column - main structure --> <rect x="12" y="10" width="10" height="42" fill="url(#kasem-gradient)" /> <!-- Right column - supporting structure --> <rect x="38" y="15" width="10" height="37" fill="url(#kasem-gradient)" opacity="0.75" /> <!-- Horizontal floor plates --> <rect x="10" y="18" width="30" height="2" fill="url(#kasem-gradient)" /> <rect x="10" y="26" width="30" height="2" fill="url(#kasem-gradient)" /> <rect x="10" y="34" width="30" height="2" fill="url(#kasem-gradient)" /> <rect x="10" y="42" width="30" height="2" fill="url(#kasem-gradient)" /> <!-- Window grid pattern on left structure --> <g fill="none" stroke="url(#kasem-gradient)" stroke-width="0.8" opacity="0.5">
+       <rect x="15" y="13" width="3" height="3" />
+       <rect x="24" y="13" width="3" height="3" />
+       <rect x="15" y="22" width="3" height="3" />
+       <rect x="24" y="22" width="3" height="3" />
+       <rect x="15" y="31" width="3" height="3" />
+       <rect x="24" y="31" width="3" height="3" />
+       <rect x="15" y="40" width="3" height="3" />
+       <rect x="24" y="40" width="3" height="3" />
+      </g> <!-- Window pattern on right tower --> <g fill="none" stroke="url(#kasem-gradient)" stroke-width="0.7" opacity="0.4">
+       <rect x="41" y="18" width="2.5" height="2.5" />
+       <rect x="46" y="18" width="2.5" height="2.5" />
+       <rect x="41" y="26" width="2.5" height="2.5" />
+       <rect x="46" y="26" width="2.5" height="2.5" />
+       <rect x="41" y="34" width="2.5" height="2.5" />
+       <rect x="46" y="34" width="2.5" height="2.5" />
+      </g>
+     </svg>
+     <div class="text-white leading-none hidden sm:block">
+   
+     </div></a>
+    <nav class="desktop-nav hidden lg:flex items-center gap-6 xl:gap-8 text-[10px] xl:text-[11px] tracking-[0.2em] uppercase text-white/85">
+     <a data-template-id="nav-about" class="canva-link hover:text-[#d8bd79] transition" href="#about">About</a> <a data-template-id="nav-products" class="canva-link hover:text-[#d8bd79] transition" href="#products">Products</a> <a data-template-id="nav-alfa" class="canva-link hover:text-[#d8bd79] transition" href="#alfa">Alfa Dekor</a> <a data-template-id="nav-projects" class="canva-link hover:text-[#d8bd79] transition" href="#projects">Projects</a> <a data-template-id="nav-contact" class="canva-link hover:text-[#d8bd79] transition" href="#contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-2 sm:gap-3">
+     <div class="border border-white/20 rounded-full px-2 sm:px-3 py-2 text-white text-[9px] sm:text-[10px] tracking-[0.18em]">
+      <button id="langAr" class="focus-ring text-white/70">AR</button> <span class="mx-1.5 sm:mx-2 text-white/30">/</span> <button id="langTr" class="focus-ring text-white/70">TR</button> <span class="mx-1.5 sm:mx-2 text-white/30">/</span> <button id="langEn" class="focus-ring text-[#d6bf7c]">EN</button>
+     </div><button id="menuBtn" class="lg:hidden text-white focus-ring" aria-label="Open menu"> <i data-lucide="menu" class="w-5 h-5"></i> </button>
+    </div>
+   </div>
+  </header>
+  <div id="mobileMenu" class="fixed inset-0 z-40 bg-[#0d2d24] text-white hidden flex-col">
+   <div class="px-5 sm:px-6 py-5 sm:py-6 border-b border-white/10 flex items-center justify-between">
+    <div class="tracking-[0.28em] text-xs sm:text-sm font-semibold">
+     KASEM GROUP
+    </div><button id="mobileCloseBtn" class="text-white focus-ring" aria-label="Close menu"> <i data-lucide="x" class="w-5 h-5"></i> </button>
+   </div>
+   <nav class="flex-1 px-5 sm:px-6 pt-8 sm:pt-12 pb-8 flex flex-col gap-6 sm:gap-7 text-lg sm:text-xl md:text-2xl serif">
+    <a href="#about" class="mobile-link hover:text-[#d8bd79] transition" data-template-id="mobile-nav-about"></a> <a href="#products" class="mobile-link hover:text-[#d8bd79] transition" data-template-id="mobile-nav-products"></a> <a href="#alfa" class="mobile-link hover:text-[#d8bd79] transition" data-template-id="mobile-nav-alfa"></a> <a href="#projects" class="mobile-link hover:text-[#d8bd79] transition" data-template-id="mobile-nav-projects"></a> <a href="#contact" class="mobile-link hover:text-[#d8bd79] transition" data-template-id="mobile-nav-contact"></a>
+   </nav>
+   <div class="px-5 sm:px-6 pb-8">
+    <button id="backBtn" class="px-5 py-3 bg-[#b89a5f] text-[#0d2d24] font-semibold uppercase text-sm tracking-[0.18em] rounded focus-ring inline-flex items-center gap-2 justify-center w-full"><i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home</button>
+   </div>
+  </div>
+  <main>
+   <section id="home" class="relative min-h-[760px] h-screen overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+    <img src="img.jpg"
+     data-template-id="hero-image"
+     class="canva-image hero-bg w-full h-full object-cover"
+     loading="lazy">
+     <div class="absolute inset-0 bg-gradient-to-r from-[#06120f]/90 via-[#06120f]/55 to-[#06120f]/30"></div>
+     <div class="absolute inset-0 bg-black/10"></div>
+    </div>
+    <div class="relative z-10 h-full max-w-[1500px] mx-auto px-5 md:px-10 lg:px-14 flex items-center">
+     <div class="max-w-4xl text-white pt-16">
+      <div data-template-id="hero-kicker" class="canva-text lux-line text-[11px] md:text-xs tracking-[0.32em] uppercase text-[#d8c48c] fade-up">
+       International Building Systems
+      </div>
+     <h1 data-template-id="hero-title"
+    class="canva-text serif text-[28px] md:text-[42px] lg:text-[52px] leading-[0.96] mt-7 max-w-4xl fade-up delay-1">
+    KASEM GROUP<br>
+    Building the Future with Innovation
+</h1>
+      <p data-template-id="hero-subtitle" class="canva-text mt-8 max-w-2xl text-white/78 text-sm md:text-base leading-7 tracking-[0.02em] fade-up delay-2">Prefabricated Buildings, Sandwich Panels, Industrial Solutions and International Partnerships.</p>
+      <div class="mt-10 flex flex-wrap gap-3 fade-up delay-3">
+       <a href="#products" data-template-id="hero-primary" class="canva-button focus-ring inline-flex items-center gap-3 px-6 py-4 bg-[#b89a5f] text-[#10241d] text-[11px] tracking-[0.18em] uppercase font-semibold hover:bg-[#d4ba7a] transition">View Products <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a> <a href="#contact" data-template-id="hero-secondary" class="canva-button focus-ring inline-flex items-center gap-3 px-6 py-4 border border-white/35 text-white text-[11px] tracking-[0.18em] uppercase hover:bg-white hover:text-[#10241d] transition">Request Quotation</a> <a href="#alfa" data-template-id="hero-tertiary" class="canva-button focus-ring inline-flex items-center gap-3 px-6 py-4 border border-white/20 text-white text-[11px] tracking-[0.18em] uppercase hover:border-[#b89a5f] hover:text-[#d8bd79] transition">Discover ALFA DEKOR</a>
+      </div>
+     </div>
+    </div>
+    <div class="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-6 text-white/70 text-[10px] tracking-[0.2em]">
+     <span>01</span>
+     <div class="h-28 w-px bg-white/25 mx-auto relative overflow-hidden"><span class="absolute top-0 left-0 w-full h-10 bg-[#b89a5f] animate-pulse"></span>
+     </div><span>06</span>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/65 text-[9px] tracking-[0.22em] uppercase flex flex-col items-center gap-2">
+     <span>Scroll</span> <span class="w-px h-10 bg-white/35"></span>
+    </div>
+   </section>
+   <section id="about" class="py-24 md:py-32 bg-[#f6f3ed]">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14 grid lg:grid-cols-2 gap-14 lg:gap-24 items-center">
+     <div>
+      <div data-template-id="about-kicker" class="canva-text lux-line text-[11px] tracking-[0.28em] uppercase text-[#9b7f47]">
+       About the Group
+      </div>
+     <h2 data-template-id="about-title"
+    class="canva-text serif text-[24px] md:text-[36px] lg:text-[46px] leading-[1.1] text-[#183028] mt-6">
+    Engineering vision.<br>
+    Built to endure.
+</h2>
+      <p data-template-id="about-copy" class="canva-text mt-7 text-[#5f675f] leading-8 max-w-2xl text-sm md:text-base">KASEM GROUP develops advanced building systems shaped by manufacturing precision, engineering discipline and a long-term international vision. From prefabricated structures and sandwich panel technologies to industrial buildings and modern construction solutions, we create efficient, durable and future-ready spaces.</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 border-t border-[#d9d1c6] pt-8">
+       <div>
+        <div data-template-id="metric-1-number" class="canva-text serif text-3xl text-[#173328]">
+         20+
+        </div>
+        <div data-template-id="metric-1-label" class="canva-text text-[10px] uppercase tracking-[0.18em] text-[#7a7f79] mt-1">
+         Years of Expertise
+        </div>
+       </div>
+       <div>
+        <div data-template-id="metric-2-number" class="canva-text serif text-3xl text-[#173328]">
+         7
+        </div>
+        <div data-template-id="metric-2-label" class="canva-text text-[10px] uppercase tracking-[0.18em] text-[#7a7f79] mt-1">
+         Core Divisions
+        </div>
+       </div>
+       <div>
+        <div data-template-id="metric-3-number" class="canva-text serif text-3xl text-[#173328]">
+         2
+        </div>
+        <div data-template-id="metric-3-label" class="canva-text text-[10px] uppercase tracking-[0.18em] text-[#7a7f79] mt-1">
+         Strategic Markets
+        </div>
+       </div>
+       <div>
+        <div data-template-id="metric-4-number" class="canva-text serif text-3xl text-[#173328]">
+         360°
+        </div>
+        <div data-template-id="metric-4-label" class="canva-text text-[10px] uppercase tracking-[0.18em] text-[#7a7f79] mt-1">
+         Integrated Solutions
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="relative">
+      <div class="absolute -top-7 -right-7 w-28 h-28 border border-[#b89a5f]/45 hidden md:block"></div><img src="img2.png" class="canva-image w-full h-[560px] object-cover" loading="lazy">
+      <div class="absolute bottom-0 left-0 bg-[#0d2d24] text-white p-7 md:p-9 max-w-xs">
+       <div data-template-id="about-card-kicker" class="canva-text text-[10px] uppercase tracking-[0.24em] text-[#d4bc7b]">
+        Integrated Capability
+       </div>
+       <p data-template-id="about-card-copy" class="canva-text mt-3 text-sm leading-6 text-white/75">From concept and manufacturing to delivery and installation.</p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="pattern-panel py-20 md:py-24 text-white">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14 grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-center">
+     <div>
+      <div data-template-id="syria-kicker" class="canva-text text-[11px] uppercase tracking-[0.3em] text-[#d0b36f]">
+       Regional Vision
+      </div>
+    <h2 data-template-id="syria-title"
+    class="canva-text serif text-[24px] md:text-[36px] lg:text-[46px] leading-[1.1] mt-4">
+    KASEM GROUP Syria
+</h2>
+     </div>
+     <div>
+      <p data-template-id="syria-copy" class="canva-text text-white/76 leading-8 text-sm md:text-base max-w-3xl">Our Syrian branch represents a strategic extension of KASEM GROUP’s international business vision and regional growth strategy, creating new pathways for industrial partnerships, modern construction projects and long-term development across the region.</p>
+     </div>
+    </div>
+   </section>
+   <section id="products" class="py-24 md:py-32 bg-[#f6f3ed]">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14">
+     <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end gap-8">
+      <div>
+       <div data-template-id="products-kicker" class="canva-text lux-line text-[11px] tracking-[0.28em] uppercase text-[#9b7f47]">
+        Our Solutions
+       </div>
+<h2 data-template-id="products-title"
+    class="canva-text serif text-[24px] md:text-[36px] lg:text-[46px] leading-[1.1] text-[#183028] mt-5">
+    Built around possibility.
+</h2>      </div>
+      <div class="flex flex-wrap gap-3 text-[10px] tracking-[0.16em] uppercase">
+       <button class="filter-btn active px-4 py-3 border border-[#183028] bg-[#183028] text-white" data-filter="all">All</button> <button class="filter-btn px-4 py-3 border border-[#cfc6b8] text-[#506057]" data-filter="buildings">Buildings</button> <button class="filter-btn px-4 py-3 border border-[#cfc6b8] text-[#506057]" data-filter="systems">Systems</button> <button class="filter-btn px-4 py-3 border border-[#cfc6b8] text-[#506057]" data-filter="surfaces">Surfaces</button>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+      <article class="product-card group relative overflow-hidden h-[430px]" data-category="buildings">
+       <img src="img3.png" class="canva-image w-full h-full object-cover" loading="lazy">
+       <div class="card-overlay absolute inset-0"></div>
+       <div class="absolute inset-x-0 bottom-0 p-7 text-white">
+        <div data-template-id="product-1-label" class="canva-text text-[10px] uppercase tracking-[0.24em] text-[#d6bd78]">
+         01 / Living Systems
+        </div>
+        <h3 data-template-id="product-1-title" class="canva-text serif text-3xl mt-3">Prefabricated Houses</h3>
+        <p data-template-id="product-1-copy" class="canva-text text-sm leading-6 text-white/70 mt-2">Flexible, durable and rapidly deployable residential structures.</p><a data-template-id="product-1-link" href="#contact" class="canva-link inline-flex items-center gap-2 mt-5 text-[10px] uppercase tracking-[0.18em]">Explore <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+       </div>
+      </article>
+      <article class="product-card group relative overflow-hidden h-[430px]" data-category="systems">
+       <img src="img4.png" class="canva-image w-full h-full object-cover" loading="lazy">
+       <div class="card-overlay absolute inset-0"></div>
+       <div class="absolute inset-x-0 bottom-0 p-7 text-white">
+        <div data-template-id="product-2-label" class="canva-text text-[10px] uppercase tracking-[0.24em] text-[#d6bd78]">
+         02 / Envelope Systems
+        </div>
+        <h3 data-template-id="product-2-title" class="canva-text serif text-3xl mt-3">Sandwich Panels</h3>
+        <p data-template-id="product-2-copy" class="canva-text text-sm leading-6 text-white/70 mt-2">High-performance insulated panel solutions for modern buildings.</p><a data-template-id="product-2-link" href="#contact" class="canva-link inline-flex items-center gap-2 mt-5 text-[10px] uppercase tracking-[0.18em]">Explore <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+       </div>
+      </article>
+      <article class="product-card group relative overflow-hidden h-[430px]" data-category="buildings">
+       <img src="img5.png" class="canva-image w-full h-full object-cover" loading="lazy">
+       <div class="card-overlay absolute inset-0"></div>
+       <div class="absolute inset-x-0 bottom-0 p-7 text-white">
+        <div data-template-id="product-3-label" class="canva-text text-[10px] uppercase tracking-[0.24em] text-[#d6bd78]">
+         03 / Mobility
+        </div>
+        <h3 data-template-id="product-3-title" class="canva-text serif text-3xl mt-3">Portable Cabins</h3>
+        <p data-template-id="product-3-copy" class="canva-text text-sm leading-6 text-white/70 mt-2">Smart temporary spaces engineered for speed and reliability.</p><a data-template-id="product-3-link" href="#contact" class="canva-link inline-flex items-center gap-2 mt-5 text-[10px] uppercase tracking-[0.18em]">Explore <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+       </div>
+      </article>
+      <article class="product-card group relative overflow-hidden h-[430px]" data-category="buildings">
+       <img src="img6.jpg" class="canva-image w-full h-full object-cover" loading="lazy">
+       <div class="card-overlay absolute inset-0"></div>
+       <div class="absolute inset-x-0 bottom-0 p-7 text-white">
+        <div data-template-id="product-4-label" class="canva-text text-[10px] uppercase tracking-[0.24em] text-[#d6bd78]">
+         04 / Workspaces
+        </div>
+        <h3 data-template-id="product-4-title" class="canva-text serif text-3xl mt-3">Modular Offices</h3>
+        <p data-template-id="product-4-copy" class="canva-text text-sm leading-6 text-white/70 mt-2">Contemporary, efficient environments for agile operations.</p><a data-template-id="product-4-link" href="#contact" class="canva-link inline-flex items-center gap-2 mt-5 text-[10px] uppercase tracking-[0.18em]">Explore <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+       </div>
+      </article>
+      <article class="product-card group relative overflow-hidden h-[430px]" data-category="buildings">
+       <img src="img7.png" class="canva-image w-full h-full object-cover" loading="lazy">
+       <div class="card-overlay absolute inset-0"></div>
+       <div class="absolute inset-x-0 bottom-0 p-7 text-white">
+        <div data-template-id="product-5-label" class="canva-text text-[10px] uppercase tracking-[0.24em] text-[#d6bd78]">
+         05 / Industry
+        </div>
+        <h3 data-template-id="product-5-title" class="canva-text serif text-3xl mt-3">Industrial Buildings</h3>
+        <p data-template-id="product-5-copy" class="canva-text text-sm leading-6 text-white/70 mt-2">Robust, scalable structures for production and logistics.</p><a data-template-id="product-5-link" href="#contact" class="canva-link inline-flex items-center gap-2 mt-5 text-[10px] uppercase tracking-[0.18em]">Explore <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+       </div>
+      </article>
+      <article class="product-card group relative overflow-hidden h-[430px]" data-category="surfaces">
+       <img src="img8.png" class="canva-image w-full h-full object-cover" loading="lazy">
+       <div class="card-overlay absolute inset-0"></div>
+       <div class="absolute inset-x-0 bottom-0 p-7 text-white">
+        <div data-template-id="product-6-label" class="canva-text text-[10px] uppercase tracking-[0.24em] text-[#d6bd78]">
+         06 / ALFA DEKOR
+        </div>
+        <h3 data-template-id="product-6-title" class="canva-text serif text-3xl mt-3">Marble &amp; Surfaces</h3>
+        <p data-template-id="product-6-copy" class="canva-text text-sm leading-6 text-white/70 mt-2">Premium decorative materials shaped for refined interiors.</p><a data-template-id="product-6-link" href="#alfa" class="canva-link inline-flex items-center gap-2 mt-5 text-[10px] uppercase tracking-[0.18em]">Explore <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section id="alfa" class="bg-[#16251f] text-white py-24 md:py-32 overflow-hidden">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14 grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
+     <div>
+      <div data-template-id="alfa-kicker" class="canva-text text-[11px] tracking-[0.3em] uppercase text-[#d8bf7b]">
+       A KASEM GROUP Brand
+      </div>
+     <h2 data-template-id="alfa-title"
+    class="canva-text serif text-[24px] md:text-[36px] lg:text-[46px] leading-[1.1] mt-5">
+    ALFA<br>
+    DEKOR
+</h2>
+      <p data-template-id="alfa-copy" class="canva-text mt-7 text-white/68 leading-8 max-w-xl">Natural surfaces. Timeless expression. ALFA DEKOR curates marble collections and premium decorative finishes for interiors defined by elegance, materiality and architectural presence.</p>
+      <div class="grid sm:grid-cols-3 gap-5 mt-10">
+       <div class="border-t border-white/15 pt-4">
+        <div data-template-id="alfa-feature-1" class="canva-text serif text-2xl">
+         Marble
+        </div>
+        <div data-template-id="alfa-feature-1-copy" class="canva-text text-[10px] uppercase tracking-[0.18em] text-white/45 mt-2">
+         Natural Collections
+        </div>
+       </div>
+       <div class="border-t border-white/15 pt-4">
+        <div data-template-id="alfa-feature-2" class="canva-text serif text-2xl">
+         Surfaces
+        </div>
+        <div data-template-id="alfa-feature-2-copy" class="canva-text text-[10px] uppercase tracking-[0.18em] text-white/45 mt-2">
+         Decorative Finishes
+        </div>
+       </div>
+       <div class="border-t border-white/15 pt-4">
+        <div data-template-id="alfa-feature-3" class="canva-text serif text-2xl">
+         Interiors
+        </div>
+        <div data-template-id="alfa-feature-3-copy" class="canva-text text-[10px] uppercase tracking-[0.18em] text-white/45 mt-2">
+         Design Solutions
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="relative h-[620px]">
+      <img src="img9.png" class="canva-image absolute right-0 top-0 w-[78%] h-[88%] object-cover" loading="lazy"> <img src="img8.png" class="canva-image absolute left-0 bottom-0 w-[45%] h-[45%] object-cover border-[10px] border-[#16251f]" loading="lazy">
+      <div class="absolute left-8 top-8 border border-[#d0b36f]/50 w-28 h-28"></div>
+     </div>
+    </div>
+   </section>
+   <section class="py-24 md:py-28 bg-[#efe9df]">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14">
+     <div class="mb-10">
+      <div data-template-id="event-kicker" class="canva-text lux-line text-[11px] tracking-[0.28em] uppercase text-[#9b7f47]">
+       Exhibitions &amp; Events
+      </div>
+<h2 data-template-id="event-title"
+    class="canva-text serif text-[24px] md:text-[36px] lg:text-[46px] text-[#183028] mt-5">
+    BUILDEX Damascus 2026
+</h2>     </div>
+     <div class="grid lg:grid-cols-[1.08fr_0.92fr] bg-[#183028] text-white">
+      <div class="relative min-h-[420px] overflow-hidden">
+       <img src="img10.png" class="canva-image w-full h-full object-cover absolute inset-0" loading="lazy">
+       <div class="absolute inset-0 bg-black/20"></div>
+      </div>
+      <div class="p-8 md:p-12 flex flex-col justify-center">
+       <div data-template-id="event-label" class="canva-text text-[10px] uppercase tracking-[0.24em] text-[#d8bf7b]">
+        Featured Event
+       </div>
+       <p data-template-id="event-copy" class="canva-text mt-5 text-white/74 leading-8">Join us at BUILDEX Damascus 2026. We look forward to welcoming you and introducing our latest products, innovations and industrial solutions.</p>
+       <div class="grid grid-cols-4 gap-3 mt-8 text-center">
+        <div class="border border-white/15 py-4">
+         <div id="days" class="serif text-3xl">
+          00
+         </div>
+         <div data-template-id="countdown-days-label" class="canva-text text-[9px] uppercase tracking-[0.18em] text-white/45 mt-1">
+          Days
+         </div>
+        </div>
+        <div class="border border-white/15 py-4">
+         <div id="hours" class="serif text-3xl">
+          00
+         </div>
+         <div data-template-id="countdown-hours-label" class="canva-text text-[9px] uppercase tracking-[0.18em] text-white/45 mt-1">
+          Hours
+         </div>
+        </div>
+        <div class="border border-white/15 py-4">
+         <div id="minutes" class="serif text-3xl">
+          00
+         </div>
+         <div data-template-id="countdown-minutes-label" class="canva-text text-[9px] uppercase tracking-[0.18em] text-white/45 mt-1">
+          Minutes
+         </div>
+        </div>
+        <div class="border border-white/15 py-4">
+         <div id="seconds" class="serif text-3xl">
+          00
+         </div>
+         <div data-template-id="countdown-seconds-label" class="canva-text text-[9px] uppercase tracking-[0.18em] text-white/45 mt-1">
+          Seconds
+         </div>
+        </div>
+       </div>
+       <div class="flex flex-wrap gap-3 mt-8">
+        <a data-template-id="event-register" href="#partner" class="canva-button px-5 py-3 bg-[#b89a5f] text-[#10241d] text-[10px] uppercase tracking-[0.18em] font-semibold">Register Interest</a> <a data-template-id="event-contact" href="#contact" class="canva-button px-5 py-3 border border-white/25 text-white text-[10px] uppercase tracking-[0.18em]">Contact Us</a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="py-24 md:py-28 bg-[#f6f3ed]">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14">
+     <div class="flex items-end justify-between gap-8 mb-12">
+      <div>
+       <div data-template-id="partners-kicker" class="canva-text lux-line text-[11px] tracking-[0.28em] uppercase text-[#9b7f47]">
+        Our Network
+       </div>
+<h2 data-template-id="partners-title"
+    class="canva-text serif text-[24px] md:text-[36px] lg:text-[46px] text-[#183028] mt-5">
+    Our Partners
+</h2>      </div>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <article class="border border-[#ddd5ca] p-6 bg-[#fbf8f3]">
+       <div data-template-id="partner-1-mark" class="canva-text serif text-3xl text-[#173328]">
+        A
+       </div>
+       <h3 data-template-id="partner-1-title" class="canva-text mt-6 font-semibold text-[#22312a]">Atlas Engineering</h3>
+       <p data-template-id="partner-1-copy" class="canva-text text-sm text-[#737971] leading-6 mt-3">Regional engineering collaboration for industrial and infrastructure projects.</p><a data-template-id="partner-1-link" href="#contact" class="canva-link inline-flex items-center gap-2 mt-5 text-[10px] tracking-[0.16em] uppercase text-[#8a7347]">View Partnership <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </article>
+      <article class="border border-[#ddd5ca] p-6 bg-[#fbf8f3]">
+       <div data-template-id="partner-2-mark" class="canva-text serif text-3xl text-[#173328]">
+        N
+       </div>
+       <h3 data-template-id="partner-2-title" class="canva-text mt-6 font-semibold text-[#22312a]">Nova Materials</h3>
+       <p data-template-id="partner-2-copy" class="canva-text text-sm text-[#737971] leading-6 mt-3">Specialized materials and envelope systems supply partnership.</p><a data-template-id="partner-2-link" href="#contact" class="canva-link inline-flex items-center gap-2 mt-5 text-[10px] tracking-[0.16em] uppercase text-[#8a7347]">View Partnership <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </article>
+      <article class="border border-[#ddd5ca] p-6 bg-[#fbf8f3]">
+       <div data-template-id="partner-3-mark" class="canva-text serif text-3xl text-[#173328]">
+        M
+       </div>
+       <h3 data-template-id="partner-3-title" class="canva-text mt-6 font-semibold text-[#22312a]">Meridian Build</h3>
+       <p data-template-id="partner-3-copy" class="canva-text text-sm text-[#737971] leading-6 mt-3">Execution and project delivery collaboration across key markets.</p><a data-template-id="partner-3-link" href="#contact" class="canva-link inline-flex items-center gap-2 mt-5 text-[10px] tracking-[0.16em] uppercase text-[#8a7347]">View Partnership <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </article>
+      <article class="border border-[#ddd5ca] p-6 bg-[#fbf8f3]">
+       <div data-template-id="partner-4-mark" class="canva-text serif text-3xl text-[#173328]">
+        S
+       </div>
+       <h3 data-template-id="partner-4-title" class="canva-text mt-6 font-semibold text-[#22312a]">Stonehaus</h3>
+       <p data-template-id="partner-4-copy" class="canva-text text-sm text-[#737971] leading-6 mt-3">Premium interiors and architectural finish collaboration.</p><a data-template-id="partner-4-link" href="#contact" class="canva-link inline-flex items-center gap-2 mt-5 text-[10px] tracking-[0.16em] uppercase text-[#8a7347]">View Partnership <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section id="partner" class="bg-[#10251e] text-white py-24 md:py-28">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14 grid lg:grid-cols-[0.85fr_1.15fr] gap-14">
+     <div>
+      <div data-template-id="partner-kicker" class="canva-text text-[11px] tracking-[0.3em] uppercase text-[#d4ba7a]">
+       Partnership
+      </div>
+      <h2 data-template-id="partner-title" class="canva-text serif text-[46px] md:text-[64px] leading-none mt-5">We Welcome Strategic Partners</h2>
+      <p data-template-id="partner-copy" class="canva-text mt-7 text-white/68 leading-8 max-w-xl">Partnering with KASEM GROUP means access to industrial expertise, regional growth opportunities and long-term business development.</p>
+     </div>
+     <form id="partnerForm" class="grid md:grid-cols-2 gap-4" novalidate>
+      <div>
+       <label data-template-id="form-company-label" for="company_name" class="canva-text block text-[10px] uppercase tracking-[0.18em] text-white/55 mb-2">Company Name</label> <input id="company_name" name="company_name" class="w-full bg-white/5 border border-white/15 px-4 py-3 text-white outline-none focus:border-[#c3a76c]" required>
+      </div>
+      <div>
+       <label data-template-id="form-country-label" for="country" class="canva-text block text-[10px] uppercase tracking-[0.18em] text-white/55 mb-2">Country</label> <input id="country" name="country" class="w-full bg-white/5 border border-white/15 px-4 py-3 text-white outline-none focus:border-[#c3a76c]" required>
+      </div>
+      <div>
+       <label data-template-id="form-person-label" for="contact_person" class="canva-text block text-[10px] uppercase tracking-[0.18em] text-white/55 mb-2">Contact Person</label> <input id="contact_person" name="contact_person" class="w-full bg-white/5 border border-white/15 px-4 py-3 text-white outline-none focus:border-[#c3a76c]" required>
+      </div>
+      <div>
+       <label data-template-id="form-phone-label" for="phone" class="canva-text block text-[10px] uppercase tracking-[0.18em] text-white/55 mb-2">Phone</label> <input id="phone" name="phone" class="w-full bg-white/5 border border-white/15 px-4 py-3 text-white outline-none focus:border-[#c3a76c]" required>
+      </div>
+      <div>
+       <label data-template-id="form-email-label" for="email" class="canva-text block text-[10px] uppercase tracking-[0.18em] text-white/55 mb-2">Email</label> <input id="email" name="email" type="email" class="w-full bg-white/5 border border-white/15 px-4 py-3 text-white outline-none focus:border-[#c3a76c]" required>
+      </div>
+      <div>
+       <label data-template-id="form-activity-label" for="business_activity" class="canva-text block text-[10px] uppercase tracking-[0.18em] text-white/55 mb-2">Business Activity</label> <input id="business_activity" name="business_activity" class="w-full bg-white/5 border border-white/15 px-4 py-3 text-white outline-none focus:border-[#c3a76c]" required>
+      </div>
+      <div class="md:col-span-2">
+       <label data-template-id="form-message-label" for="message" class="canva-text block text-[10px] uppercase tracking-[0.18em] text-white/55 mb-2">Message</label> <textarea id="message" name="message" rows="5" class="w-full bg-white/5 border border-white/15 px-4 py-3 text-white outline-none focus:border-[#c3a76c]" required></textarea>
+      </div>
+      <div class="md:col-span-2 flex flex-wrap items-center gap-4">
+       <button id="submitBtn" type="submit" data-template-id="form-submit" class="canva-button px-6 py-4 bg-[#b89a5f] text-[#10251e] text-[10px] uppercase tracking-[0.18em] font-semibold"> Submit Partnership Request </button>
+       <p id="formStatus" class="text-sm text-white/70"></p>
+      </div>
+     </form>
+    </div>
+   </section>
+   <script>
+document.getElementById("partnerForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    var company = document.getElementById("company_name").value;
+    var country = document.getElementById("country").value;
+    var person = document.getElementById("contact_person").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var activity = document.getElementById("business_activity").value;
+    var message = document.getElementById("message").value;
+
+    var subject = "KASEM GROUP Partnership Request";
+
+    var body =
+        "Company Name: " + company + "\n" +
+        "Country: " + country + "\n" +
+        "Contact Person: " + person + "\n" +
+        "Phone: " + phone + "\n" +
+        "Email: " + email + "\n" +
+        "Business Activity: " + activity + "\n\n" +
+        "Message:\n" + message;
+
+  window.location.href =
+    "https://mail.google.com/mail/?view=cm&fs=1&to=info@kasemgroup.com.tr&su=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(body);
+});
+</script>
+   <section id="projects" class="py-24 md:py-28 bg-[#f6f3ed]">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14">
+     <div class="mb-12">
+      <div data-template-id="gallery-kicker" class="canva-text lux-line text-[11px] tracking-[0.28em] uppercase text-[#9b7f47]">
+       Selected Works
+      </div>
+<h2 data-template-id="gallery-title"
+    class="canva-text serif text-[24px] md:text-[36px] lg:text-[46px] text-[#183028] mt-5">
+    Project Gallery
+</h2>     </div>
+     <div class="grid md:grid-cols-2 gap-5">
+      <button class="gallery-card relative overflow-hidden h-[380px] focus-ring" data-index="0"> <img src="img11.png" class="canva-image w-full h-full object-cover" loading="lazy">
+       <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+       <div class="absolute bottom-0 inset-x-0 p-6 text-white flex justify-between items-end">
+        <div>
+         <div data-template-id="gallery-1-label" class="canva-text text-[10px] tracking-[0.2em] uppercase text-[#d8bf7b]">
+          Commercial
+         </div>
+         <div data-template-id="gallery-1-title" class="canva-text serif text-2xl mt-2">
+          Contemporary Business Hub
+         </div>
+        </div><i data-lucide="maximize-2" class="w-5 h-5"></i>
+       </div></button> <button class="gallery-card relative overflow-hidden h-[380px] focus-ring" data-index="1"> <img src="img12.png" class="canva-image w-full h-full object-cover" loading="lazy">
+       <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+       <div class="absolute bottom-0 inset-x-0 p-6 text-white flex justify-between items-end">
+        <div>
+         <div data-template-id="gallery-2-label" class="canva-text text-[10px] tracking-[0.2em] uppercase text-[#d8bf7b]">
+          Industrial
+         </div>
+         <div data-template-id="gallery-2-title" class="canva-text serif text-2xl mt-2">
+          Steel Frame Production Complex
+         </div>
+        </div><i data-lucide="maximize-2" class="w-5 h-5"></i>
+       </div></button> <button class="gallery-card relative overflow-hidden h-[380px] focus-ring" data-index="2"> <img src="img13.png" class="canva-image w-full h-full object-cover" loading="lazy">
+       <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+       <div class="absolute bottom-0 inset-x-0 p-6 text-white flex justify-between items-end">
+        <div>
+         <div data-template-id="gallery-3-label" class="canva-text text-[10px] tracking-[0.2em] uppercase text-[#d8bf7b]">
+          Residential
+         </div>
+         <div data-template-id="gallery-3-title" class="canva-text serif text-2xl mt-2">
+          Urban Modular Living
+         </div>
+        </div><i data-lucide="maximize-2" class="w-5 h-5"></i>
+       </div></button> <button class="gallery-card relative overflow-hidden h-[380px] focus-ring" data-index="3"> <img src="img14.png" class="canva-image w-full h-full object-cover" loading="lazy">
+       <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+       <div class="absolute bottom-0 inset-x-0 p-6 text-white flex justify-between items-end">
+        <div>
+         <div data-template-id="gallery-4-label" class="canva-text text-[10px] tracking-[0.2em] uppercase text-[#d8bf7b]">
+          Development
+         </div>
+         <div data-template-id="gallery-4-title" class="canva-text serif text-2xl mt-2">
+          Regional Construction Progress
+         </div>
+        </div><i data-lucide="maximize-2" class="w-5 h-5"></i>
+       </div></button>
+     </div>
+    </div>
+   </section>
+   <section id="contact" class="py-24 md:py-28 bg-[#ece6dc]">
+    <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14 grid lg:grid-cols-2 gap-14">
+     <div>
+      <div data-template-id="contact-kicker" class="canva-text lux-line text-[11px] tracking-[0.28em] uppercase text-[#9b7f47]">
+       Contact
+      </div>
+      <h2 data-template-id="contact-title" class="canva-text serif text-[42px] md:text-[58px] text-[#183028] mt-5">Let’s build what’s next.</h2>
+      <div class="grid md:grid-cols-2 gap-8 mt-10">
+       <div>
+        <div data-template-id="contact-office-1" class="canva-text text-[10px] uppercase tracking-[0.22em] text-[#8d7446]">
+         Head Office
+        </div>
+        <h3 data-template-id="contact-office-1-title" class="canva-text serif text-2xl text-[#183028] mt-3">Turkey</h3>
+        <p data-template-id="contact-office-1-copy" class="canva-text text-sm text-[#687168] leading-7 mt-3">Istanbul, Türkiye<br>
+          +90 000 000 0000<br>
+          info@kasemgroup.com</p>
+       </div>
+       <div>
+        <div data-template-id="contact-office-2" class="canva-text text-[10px] uppercase tracking-[0.22em] text-[#8d7446]">
+         Regional Branch
+        </div>
+        <h3 data-template-id="contact-office-2-title" class="canva-text serif text-2xl text-[#183028] mt-3">Damascus, Syria</h3>
+        <p data-template-id="contact-office-2-copy" class="canva-text text-sm text-[#687168] leading-7 mt-3">Damascus, Syria<br>
+          +963 000 000 000<br>
+          syria@kasemgroup.com</p>
+       </div>
+      </div>
+      <div class="flex flex-wrap gap-3 mt-10">
+       <a data-template-id="contact-whatsapp" href="https://wa.me/905550000000" target="_blank" rel="noopener noreferrer" class="canva-button px-5 py-3 bg-[#183028] text-white text-[10px] uppercase tracking-[0.18em] inline-flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp</a> <a data-template-id="contact-email" href="mailto:info@kasemgroup.com" class="canva-button px-5 py-3 border border-[#b7aa98] text-[#183028] text-[10px] uppercase tracking-[0.18em] inline-flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i> Email Us</a>
+      </div>
+     </div>
+     <div class="map-grid min-h-[430px] relative overflow-hidden border border-[#d1c7ba]">
+      <div class="absolute inset-0 flex items-center justify-center">
+       <div class="w-48 h-48 rounded-full border border-[#183028]/20 flex items-center justify-center">
+        <div class="w-28 h-28 rounded-full border border-[#183028]/30 flex items-center justify-center">
+         <div class="w-5 h-5 rounded-full bg-[#183028]"></div>
+        </div>
+       </div>
+      </div>
+      <div class="absolute bottom-6 left-6 bg-[#183028] text-white px-5 py-4">
+       <div data-template-id="map-label" class="canva-text text-[10px] uppercase tracking-[0.18em] text-[#d1b872]">
+        KASEM GROUP
+       </div>
+       <div data-template-id="map-copy" class="canva-text text-sm mt-1 text-white/70">
+        Turkey · Syria · Regional Network
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-[#11231c] text-white py-12">
+   <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14 grid md:grid-cols-4 gap-8">
+    <div>
+     <div data-template-id="footer-brand" class="canva-text tracking-[0.28em] text-sm">
+      KASEM GROUP
+     </div>
+     <p data-template-id="footer-copy" class="canva-text text-white/55 text-sm leading-6 mt-4">Modern building systems. Industrial excellence. Regional vision.</p>
+    </div>
+    <div>
+     <div data-template-id="footer-links-title" class="canva-text text-[10px] uppercase tracking-[0.2em] text-[#d2b774]">
+      Quick Links
+     </div>
+     <div class="mt-4 flex flex-col gap-2 text-sm text-white/60">
+      <a data-template-id="footer-link-1" class="canva-link" href="#about">About Us</a> <a data-template-id="footer-link-2" class="canva-link" href="#products">Products</a> <a data-template-id="footer-link-3" class="canva-link" href="#alfa">ALFA DEKOR</a>
+     </div>
+    </div>
+    <div>
+     <div data-template-id="footer-contact-title" class="canva-text text-[10px] uppercase tracking-[0.2em] text-[#d2b774]">
+      Contact
+     </div>
+     <p data-template-id="footer-contact-copy" class="canva-text mt-4 text-sm leading-6 text-white/60">Turkey Head Office<br>
+       Damascus Branch<br>
+       info@kasemgroup.com</p>
+    </div>
+    <div>
+     <div data-template-id="footer-follow-title" class="canva-text text-[10px] uppercase tracking-[0.2em] text-[#d2b774]">
+      Follow
+     </div>
+     <div class="flex gap-3 mt-4 text-white/70">
+      <i data-lucide="instagram" class="w-4 h-4"></i> <i data-lucide="linkedin" class="w-4 h-4"></i> <i data-lucide="facebook" class="w-4 h-4"></i>
+     </div>
+    </div>
+   </div>
+   <div class="max-w-[1400px] mx-auto px-5 md:px-10 lg:px-14 mt-10 pt-6 border-t border-white/10 text-[10px] tracking-[0.16em] uppercase text-white/35">
+    <span data-template-id="footer-copyright" class="canva-text">© KASEM GROUP. All Rights Reserved.</span>
+   </div>
+  </footer><a href="https://wa.me/905550000000" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#1e8f5e] text-white flex items-center justify-center shadow-2xl focus-ring"> <i data-lucide="message-circle" class="w-6 h-6"></i> </a>
+  <div id="galleryModal" class="fixed inset-0 z-[70] bg-black/90 hidden items-center justify-center p-5">
+   <button id="closeGallery" class="absolute top-5 right-5 text-white focus-ring" aria-label="Close gallery"><i data-lucide="x" class="w-7 h-7"></i></button> <button id="prevGallery" class="absolute left-5 text-white focus-ring" aria-label="Previous image"><i data-lucide="chevron-left" class="w-8 h-8"></i></button> <img id="modalImage" class="max-h-[85%] max-w-[88%] object-contain"> <button id="nextGallery" class="absolute right-5 text-white focus-ring" aria-label="Next image"><i data-lucide="chevron-right" class="w-8 h-8"></i></button>
+  </div>
+  <div id="toast" class="toast fixed bottom-6 left-1/2 -translate-x-1/2 z-[80] bg-[#183028] text-white px-5 py-3 text-sm shadow-xl"></div>
+  <script src="/_sdk/editing_sdk.js"></script>
+  <script>
+    lucide.createIcons();
+
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('nav-scrolled', window.scrollY > 30);
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const backBtn = document.getElementById('backBtn');
+    const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+    
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.offsetHeight; // Trigger reflow to restart animation
+    });
+    
+    function closeMenuAndReturn() {
+      mobileMenu.classList.add('hidden');
+    }
+    
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMenuAndReturn();
+      // Scroll to home section
+      const homeSection = document.getElementById('home');
+      if (homeSection) {
+        homeSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+    
+    mobileCloseBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeMenuAndReturn();
+    });
+    
+    document.querySelectorAll('.mobile-link:not(#backBtn)').forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenuAndReturn();
+      });
+    });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active','bg-[#183028]','text-white','border-[#183028]');
+          b.classList.add('text-[#506057]','border-[#cfc6b8]');
+        });
+        btn.classList.add('active','bg-[#183028]','text-white','border-[#183028]');
+        btn.classList.remove('text-[#506057]','border-[#cfc6b8]');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.product-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+        });
+      });
+    });
+
+    const targetDate = new Date('2026-05-12T10:00:00+03:00').getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = Math.max(0, targetDate - now);
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const galleryButtons = [...document.querySelectorAll('.gallery-card')];
+    const galleryModal = document.getElementById('galleryModal');
+    const modalImage = document.getElementById('modalImage');
+    let galleryIndex = 0;
+
+    function openGallery(index) {
+      galleryIndex = index;
+      const img = galleryButtons[galleryIndex].querySelector('img');
+      modalImage.src = img.src;
+      modalImage.alt = img.alt || '';
+      galleryModal.classList.remove('hidden');
+      galleryModal.classList.add('flex');
+    }
+    function closeGallery() {
+      galleryModal.classList.add('hidden');
+      galleryModal.classList.remove('flex');
+    }
+    function moveGallery(step) {
+      galleryIndex = (galleryIndex + step + galleryButtons.length) % galleryButtons.length;
+      const img = galleryButtons[galleryIndex].querySelector('img');
+      modalImage.src = img.src;
+      modalImage.alt = img.alt || '';
+    }
+    galleryButtons.forEach(btn => btn.addEventListener('click', () => openGallery(Number(btn.dataset.index))));
+    document.getElementById('closeGallery').addEventListener('click', closeGallery);
+    document.getElementById('prevGallery').addEventListener('click', () => moveGallery(-1));
+    document.getElementById('nextGallery').addEventListener('click', () => moveGallery(1));
+    galleryModal.addEventListener('click', (e) => { if (e.target === galleryModal) closeGallery(); });
+
+    const translations = {
+      ar: {
+        // Navigation
+        'nav-about': 'من نحن',
+        'nav-products': 'المنتجات',
+        'nav-alfa': 'ألفا ديكور',
+        'nav-projects': 'المشاريع',
+        'nav-contact': 'اتصل بنا',
+        'mobile-nav-about': 'من نحن',
+        'mobile-nav-products': 'المنتجات',
+        'mobile-nav-alfa': 'ألفا ديكور',
+        'mobile-nav-projects': 'المشاريع',
+        'mobile-nav-contact': 'اتصل بنا',
+        // Hero
+        'hero-kicker': 'أنظمة البناء الدولية',
+        'hero-title': 'KASEM GROUP<br>نبني المستقبل بالابتكار',
+        'hero-subtitle': 'المباني مسبقة الصنع، ألواح الساندويتش، الحلول الصناعية والشراكات الدولية.',
+        'hero-primary': 'عرض المنتجات',
+        'hero-secondary': 'طلب عرض أسعار',
+        'hero-tertiary': 'اكتشف ألفا ديكور',
+        // About
+        'about-kicker': 'حول المجموعة',
+        'about-title': 'رؤية هندسية.<br>مبنية للاستدامة.',
+        'about-copy': 'تطور مجموعة كاسم أنظمة بناء متقدمة تشكلها دقة التصنيع والانضباط الهندسي والرؤية الدولية طويلة الأجل. من الهياكل مسبقة الصنع وتقنيات الألواح الساندويتش إلى المباني الصناعية وحلول البناء الحديثة، نخلق مساحات فعالة وقابلة للاستمرار وجاهزة للمستقبل.',
+        'about-card-kicker': 'القدرة المتكاملة',
+        'about-card-copy': 'من المفهوم والتصنيع إلى التسليم والتركيب.',
+        'metric-1-label': 'سنوات الخبرة',
+        'metric-2-label': 'الأقسام الرئيسية',
+        'metric-3-label': 'الأسواق الاستراتيجية',
+        'metric-4-label': 'حلول متكاملة 360°',
+        // Syria
+        'syria-kicker': 'الرؤية الإقليمية',
+        'syria-title': 'مجموعة كاسم سوريا',
+        'syria-copy': 'يمثل الفرع السوري لدينا امتدادًا استراتيجيًا لرؤية مجموعة كاسم العالمية واستراتيجية النمو الإقليمية، مما يخلق مسارات جديدة للشراكات الصناعية والمشاريع الإنشائية الحديثة والتطوير طويل الأجل عبر المنطقة.',
+        // Products
+        'products-kicker': 'حلولنا',
+        'products-title': 'مبني حول الإمكانيات.',
+        'product-1-label': '01 / أنظمة العيش',
+        'product-1-title': 'المنازل مسبقة الصنع',
+        'product-1-copy': 'هياكل سكنية مرنة وقوية وقابلة للنشر بسرعة.',
+        'product-1-link': 'استكشف',
+        'product-2-label': '02 / أنظمة الغلاف',
+        'product-2-title': 'ألواح الساندويتش',
+        'product-2-copy': 'حلول الألواح المعزولة عالية الأداء للمباني الحديثة.',
+        'product-2-link': 'استكشف',
+        'product-3-label': '03 / التنقل',
+        'product-3-title': 'الكابينات المحمولة',
+        'product-3-copy': 'مساحات مؤقتة ذكية مصممة للسرعة والموثوقية.',
+        'product-3-link': 'استكشف',
+        'product-4-label': '04 / أماكن العمل',
+        'product-4-title': 'المكاتب المعيارية',
+        'product-4-copy': 'بيئات معاصرة وفعالة لعمليات رشيقة.',
+        'product-4-link': 'استكشف',
+        'product-5-label': '05 / الصناعة',
+        'product-5-title': 'المباني الصناعية',
+        'product-5-copy': 'هياكل قوية وقابلة للتوسع للإنتاج واللوجستيات.',
+        'product-5-link': 'استكشف',
+        'product-6-label': '06 / ألفا ديكور',
+        'product-6-title': 'الرخام والأسطح',
+        'product-6-copy': 'مواد زخرفية فاخرة على شكل داخليات متطورة.',
+        'product-6-link': 'استكشف',
+        // ALFA
+        'alfa-kicker': 'علامة تجارية من كاسم',
+        'alfa-title': 'ألفا<br>ديكور',
+        'alfa-copy': 'أسطح طبيعية. تعبير خالد. تنسق ألفا ديكور مجموعات الرخام والتشطيبات الزخرفية الفاخرة للداخليات المحددة بالأناقة والمادية والحضور المعماري.',
+        'alfa-feature-1': 'الرخام',
+        'alfa-feature-1-copy': 'المجموعات الطبيعية',
+        'alfa-feature-2': 'الأسطح',
+        'alfa-feature-2-copy': 'التشطيبات الزخرفية',
+        'alfa-feature-3': 'الداخلية',
+        'alfa-feature-3-copy': 'حلول التصميم',
+        // Event
+        'event-kicker': 'المعارض والفعاليات',
+        'event-title': 'بيلديكس دمشق 2026',
+        'event-label': 'الحدث المميز',
+        'event-copy': 'انضم إلينا في بيلديكس دمشق 2026. نتطلع بشغف إلى استقبالك وتقديم أحدث منتجاتنا والابتكارات والحلول الصناعية.',
+        'event-register': 'تسجيل الاهتمام',
+        'event-contact': 'اتصل بنا',
+        'countdown-days-label': 'الأيام',
+        'countdown-hours-label': 'الساعات',
+        'countdown-minutes-label': 'الدقائق',
+        'countdown-seconds-label': 'الثواني',
+        // Partners
+        'partners-kicker': 'شبكتنا',
+        'partners-title': 'شركاؤنا',
+        'partner-1-title': 'أطلس للهندسة',
+        'partner-1-copy': 'التعاون الهندسي الإقليمي للمشاريع الصناعية والبنية التحتية.',
+        'partner-1-link': 'عرض الشراكة',
+        'partner-2-title': 'نوفا للمواد',
+        'partner-2-copy': 'شراكة متخصصة في توريد المواد وأنظمة الغلاف.',
+        'partner-2-link': 'عرض الشراكة',
+        'partner-3-title': 'ميريديان للبناء',
+        'partner-3-copy': 'التعاون في التنفيذ وتسليم المشاريع عبر الأسواق الرئيسية.',
+        'partner-3-link': 'عرض الشراكة',
+        'partner-4-title': 'ستونهاوس',
+        'partner-4-copy': 'التعاون في الداخليات الفاخرة والتشطيبات المعمارية.',
+        'partner-4-link': 'عرض الشراكة',
+        // Partnership
+        'partner-kicker': 'الشراكة',
+        'partner-title': 'نرحب بالشركاء الاستراتيجيين',
+        'partner-copy': 'الشراكة مع مجموعة كاسم تعني الوصول إلى الخبرة الصناعية وفرص النمو الإقليمي والتطوير العملي طويل الأجل.',
+        'form-company-label': 'اسم الشركة',
+        'form-country-label': 'الدولة',
+        'form-person-label': 'الشخص المسؤول',
+        'form-phone-label': 'الهاتف',
+        'form-email-label': 'البريد الإلكتروني',
+        'form-activity-label': 'النشاط التجاري',
+        'form-message-label': 'الرسالة',
+        'form-submit': 'إرسال طلب الشراكة',
+        // Gallery
+        'gallery-kicker': 'الأعمال المختارة',
+        'gallery-title': 'معرض المشاريع',
+        'gallery-1-label': 'تجاري',
+        'gallery-1-title': 'مركز الأعمال المعاصر',
+        'gallery-2-label': 'صناعي',
+        'gallery-2-title': 'مجمع الإنتاج الهندسي الحديث',
+        'gallery-3-label': 'سكني',
+        'gallery-3-title': 'السكن الحضري المعياري',
+        'gallery-4-label': 'التطوير',
+        'gallery-4-title': 'تقدم البناء الإقليمي',
+        // Contact
+        'contact-kicker': 'اتصل',
+        'contact-title': 'دعنا نبني ما هو قادم.',
+        'contact-office-1': 'المقر الرئيسي',
+        'contact-office-1-title': 'تركيا',
+        'contact-office-1-copy': 'إسطنبول، تركيا<br>+90 000 000 0000<br>info@kasemgroup.com',
+        'contact-office-2': 'الفرع الإقليمي',
+        'contact-office-2-title': 'دمشق، سوريا',
+        'contact-office-2-copy': 'دمشق، سوريا<br>+963 000 000 000<br>syria@kasemgroup.com',
+        'contact-whatsapp': 'واتس آب',
+        'contact-email': 'أرسل لنا بريدًا',
+        'map-label': 'مجموعة كاسم',
+        'map-copy': 'تركيا · سوريا · شبكة إقليمية',
+        // Footer
+        'footer-brand': 'مجموعة كاسم',
+        'footer-copy': 'أنظمة بناء حديثة. التميز الصناعي. الرؤية الإقليمية.',
+        'footer-links-title': 'روابط سريعة',
+        'footer-link-1': 'من نحن',
+        'footer-link-2': 'المنتجات',
+        'footer-link-3': 'ألفا ديكور',
+        'footer-contact-title': 'اتصل',
+        'footer-contact-copy': 'المقر الرئيسي في تركيا<br>فرع دمشق<br>info@kasemgroup.com',
+        'footer-follow-title': 'متابعة',
+        'footer-copyright': '© مجموعة كاسم. جميع الحقوق محفوظة.'
+      },
+      tr: {
+        // Navigation
+        'nav-about': 'Hakkında',
+        'nav-products': 'Ürünler',
+        'nav-alfa': 'Alfa Dekor',
+        'nav-projects': 'Projeler',
+        'nav-contact': 'İletişim',
+        'mobile-nav-about': 'Hakkında',
+        'mobile-nav-products': 'Ürünler',
+        'mobile-nav-alfa': 'Alfa Dekor',
+        'mobile-nav-projects': 'Projeler',
+        'mobile-nav-contact': 'İletişim',
+        // Hero
+        'hero-kicker': 'Uluslararası İnşaat Sistemleri',
+        'hero-title': 'KASEM GROUP<br>Geleceği İnovasyonla İnşa Etme',
+        'hero-subtitle': 'Prefabrik Yapılar, Sandviç Paneller, Endüstriyel Çözümler ve Uluslararası Ortaklıklar.',
+        'hero-primary': 'Ürünleri Görüntüle',
+        'hero-secondary': 'Fiyat Teklifi İste',
+        'hero-tertiary': 'ALFA DEKOR Keşfet',
+        // About
+        'about-kicker': 'Grup Hakkında',
+        'about-title': 'Mühendislik Vizyonu.<br>Dayanıklılık İçin İnşa Edilmiş.',
+        'about-copy': 'KASEM GROUP, üretim hassasiyeti, mühendislik disiplini ve uzun vadeli uluslararası vizyon tarafından şekillendirilen ileri bina sistemleri geliştirmektedir. Prefabrik yapılardan ve sandviç panel teknolojilerinden endüstriyel binalar ve modern inşaat çözümlerine kadar, verimli, dayanıklı ve geleceğe hazır alanlar yaratmaktadır.',
+        'about-card-kicker': 'Entegre Yetenek',
+        'about-card-copy': 'Kavramdan üretim, teslimat ve kuruluşa kadar.',
+        'metric-1-label': 'Yıl Tecrübe',
+        'metric-2-label': 'Ana Bölüm',
+        'metric-3-label': 'Stratejik Pazarlar',
+        'metric-4-label': '360° Entegre Çözümler',
+        // Syria
+        'syria-kicker': 'Bölgesel Vizyon',
+        'syria-title': 'KASEM GROUP Suriye',
+        'syria-copy': 'Suriye şubemiz, KASEM GROUP\'un uluslararası ticari vizyonunun ve bölgesel büyüme stratejisinin stratejik bir uzantısını temsil ederek, endüstriyel ortaklıklar, modern inşaat projeleri ve bölge genelinde uzun vadeli gelişme için yeni yollar açmaktadır.',
+        // Products
+        'products-kicker': 'Çözümlerimiz',
+        'products-title': 'İmkân Etrafında İnşa Edilmiş.',
+        'product-1-label': '01 / Yaşam Sistemleri',
+        'product-1-title': 'Prefabrik Evler',
+        'product-1-copy': 'Esnek, dayanıklı ve hızla dağıtılabilir konut yapıları.',
+        'product-1-link': 'Keşfet',
+        'product-2-label': '02 / Zarf Sistemleri',
+        'product-2-title': 'Sandviç Paneller',
+        'product-2-copy': 'Modern binalar için yüksek performanslı yalıtımlı panel çözümleri.',
+        'product-2-link': 'Keşfet',
+        'product-3-label': '03 / Mobilite',
+        'product-3-title': 'Taşınabilir Kabin',
+        'product-3-copy': 'Hız ve güvenilirlik için tasarlanan akıllı geçici alanlar.',
+        'product-3-link': 'Keşfet',
+        'product-4-label': '04 / Çalışma Alanları',
+        'product-4-title': 'Modüler Ofisler',
+        'product-4-copy': 'Çevik operasyonlar için çağdaş, verimli ortamlar.',
+        'product-4-link': 'Keşfet',
+        'product-5-label': '05 / Endüstri',
+        'product-5-title': 'Endüstriyel Binalar',
+        'product-5-copy': 'Üretim ve lojistik için güçlü, ölçeklenebilir yapılar.',
+        'product-5-link': 'Keşfet',
+        'product-6-label': '06 / ALFA DEKOR',
+        'product-6-title': 'Mermer & Yüzeyler',
+        'product-6-copy': 'Rafine iç mekanlar için birinci sınıf dekoratif malzemeler.',
+        'product-6-link': 'Keşfet',
+        // ALFA
+        'alfa-kicker': 'Bir KASEM GROUP Markası',
+        'alfa-title': 'ALFA<br>DEKOR',
+        'alfa-copy': 'Doğal Yüzeyler. Zamansız İfade. ALFA DEKOR, zarafet, malzeme ve mimari varlık tarafından tanımlanan iç mekanlar için mermer koleksiyonları ve birinci sınıf dekoratif bitişleri derlemektedir.',
+        'alfa-feature-1': 'Mermer',
+        'alfa-feature-1-copy': 'Doğal Koleksiyonlar',
+        'alfa-feature-2': 'Yüzeyler',
+        'alfa-feature-2-copy': 'Dekoratif Bitişler',
+        'alfa-feature-3': 'İç Mekan',
+        'alfa-feature-3-copy': 'Tasarım Çözümleri',
+        // Event
+        'event-kicker': 'Sergiler ve Etkinlikler',
+        'event-title': 'BUILDEX Şam 2026',
+        'event-label': 'Ön Plana Çıkan Etkinlik',
+        'event-copy': 'BUILDEX Şam 2026\'ye katılın. Son ürünlerimizi, yenilikleri ve endüstriyel çözümlerimizi tanıtmaktan heyecan duyuyoruz.',
+        'event-register': 'İlgiyi Kaydet',
+        'event-contact': 'Bize Ulaşın',
+        'countdown-days-label': 'Gün',
+        'countdown-hours-label': 'Saat',
+        'countdown-minutes-label': 'Dakika',
+        'countdown-seconds-label': 'Saniye',
+        // Partners
+        'partners-kicker': 'Ağımız',
+        'partners-title': 'Ortaklarımız',
+        'partner-1-title': 'Atlas Mühendislik',
+        'partner-1-copy': 'Endüstriyel ve altyapı projeleri için bölgesel mühendislik işbirliği.',
+        'partner-1-link': 'Ortaklığı Görüntüle',
+        'partner-2-title': 'Nova Malzemeleri',
+        'partner-2-copy': 'Uzmanlaşmış malzeme ve zarf sistemleri tedarik ortaklığı.',
+        'partner-2-link': 'Ortaklığı Görüntüle',
+        'partner-3-title': 'Meridian İnşaat',
+        'partner-3-copy': 'Ana pazarlarda yürütme ve proje teslimi işbirliği.',
+        'partner-3-link': 'Ortaklığı Görüntüle',
+        'partner-4-title': 'Stonehaus',
+        'partner-4-copy': 'Birinci sınıf iç mekan ve mimari bitişler işbirliği.',
+        'partner-4-link': 'Ortaklığı Görüntüle',
+        // Partnership
+        'partner-kicker': 'Ortaklık',
+        'partner-title': 'Stratejik Ortakları Bekliyoruz',
+        'partner-copy': 'KASEM GROUP ile ortaklık, endüstriyel uzmanlık, bölgesel büyüme fırsatları ve uzun vadeli ticari gelişmeye erişim anlamına gelir.',
+        'form-company-label': 'Şirket Adı',
+        'form-country-label': 'Ülke',
+        'form-person-label': 'İletişim Kişisi',
+        'form-phone-label': 'Telefon',
+        'form-email-label': 'E-posta',
+        'form-activity-label': 'İşletme Faaliyeti',
+        'form-message-label': 'Mesaj',
+        'form-submit': 'Ortaklık Talebi Gönder',
+        // Gallery
+        'gallery-kicker': 'Seçili Çalışmalar',
+        'gallery-title': 'Proje Galerisi',
+        'gallery-1-label': 'Ticari',
+        'gallery-1-title': 'Çağdaş İş Merkezi',
+        'gallery-2-label': 'Endüstriyel',
+        'gallery-2-title': 'Çelik Çerçeve Üretim Kompleksi',
+        'gallery-3-label': 'Konut',
+        'gallery-3-title': 'Kentsel Modüler Yaşam',
+        'gallery-4-label': 'Geliştirme',
+        'gallery-4-title': 'Bölgesel İnşaat İlerleme',
+        // Contact
+        'contact-kicker': 'İletişim',
+        'contact-title': 'Sıradakini Birlikte İnşa Edelim.',
+        'contact-office-1': 'Ana Merkez',
+        'contact-office-1-title': 'Türkiye',
+        'contact-office-1-copy': 'İstanbul, Türkiye<br>+90 000 000 0000<br>info@kasemgroup.com',
+        'contact-office-2': 'Bölgesel Şube',
+        'contact-office-2-title': 'Şam, Suriye',
+        'contact-office-2-copy': 'Şam, Suriye<br>+963 000 000 000<br>syria@kasemgroup.com',
+        'contact-whatsapp': 'WhatsApp',
+        'contact-email': 'Bize E-posta Gönder',
+        'map-label': 'KASEM GROUP',
+        'map-copy': 'Türkiye · Suriye · Bölgesel Ağ',
+        // Footer
+        'footer-brand': 'KASEM GROUP',
+        'footer-copy': 'Modern İnşaat Sistemleri. Endüstriyel Mükemmellik. Bölgesel Vizyon.',
+        'footer-links-title': 'Hızlı Bağlantılar',
+        'footer-link-1': 'Hakkında',
+        'footer-link-2': 'Ürünler',
+        'footer-link-3': 'ALFA DEKOR',
+        'footer-contact-title': 'İletişim',
+        'footer-contact-copy': 'Türkiye Ana Merkezi<br>Şam Şubesi<br>info@kasemgroup.com',
+        'footer-follow-title': 'Takip Et',
+        'footer-copyright': '© KASEM GROUP. Tüm Hakları Saklıdır.'
+      },
+      en: {
+        // Navigation
+        'nav-about': 'About',
+        'nav-products': 'Products',
+        'nav-alfa': 'Alfa Dekor',
+        'nav-projects': 'Projects',
+        'nav-contact': 'Contact',
+        'mobile-nav-about': 'About Us',
+        'mobile-nav-products': 'Products',
+        'mobile-nav-alfa': 'ALFA DEKOR',
+        'mobile-nav-projects': 'Projects',
+        'mobile-nav-contact': 'Contact',
+        // Hero
+        'hero-kicker': 'International Building Systems',
+        'hero-title': 'KASEM GROUP<br>Building the Future with Innovation',
+        'hero-subtitle': 'Prefabricated Buildings, Sandwich Panels, Industrial Solutions and International Partnerships.',
+        'hero-primary': 'View Products',
+        'hero-secondary': 'Request Quotation',
+        'hero-tertiary': 'Discover ALFA DEKOR',
+        // About
+        'about-kicker': 'About the Group',
+        'about-title': 'Engineering vision.<br>Built to endure.',
+        'about-copy': 'KASEM GROUP develops advanced building systems shaped by manufacturing precision, engineering discipline and a long-term international vision. From prefabricated structures and sandwich panel technologies to industrial buildings and modern construction solutions, we create efficient, durable and future-ready spaces.',
+        'about-card-kicker': 'Integrated Capability',
+        'about-card-copy': 'From concept and manufacturing to delivery and installation.',
+        'metric-1-label': 'Years of Expertise',
+        'metric-2-label': 'Core Divisions',
+        'metric-3-label': 'Strategic Markets',
+        'metric-4-label': 'Integrated Solutions',
+        // Syria
+        'syria-kicker': 'Regional Vision',
+        'syria-title': 'KASEM GROUP Syria',
+        'syria-copy': 'Our Syrian branch represents a strategic extension of KASEM GROUP\'s international business vision and regional growth strategy, creating new pathways for industrial partnerships, modern construction projects and long-term development across the region.',
+        // Products
+        'products-kicker': 'Our Solutions',
+        'products-title': 'Built around possibility.',
+        'product-1-label': '01 / Living Systems',
+        'product-1-title': 'Prefabricated Houses',
+        'product-1-copy': 'Flexible, durable and rapidly deployable residential structures.',
+        'product-1-link': 'Explore',
+        'product-2-label': '02 / Envelope Systems',
+        'product-2-title': 'Sandwich Panels',
+        'product-2-copy': 'High-performance insulated panel solutions for modern buildings.',
+        'product-2-link': 'Explore',
+        'product-3-label': '03 / Mobility',
+        'product-3-title': 'Portable Cabins',
+        'product-3-copy': 'Smart temporary spaces engineered for speed and reliability.',
+        'product-3-link': 'Explore',
+        'product-4-label': '04 / Workspaces',
+        'product-4-title': 'Modular Offices',
+        'product-4-copy': 'Contemporary, efficient environments for agile operations.',
+        'product-4-link': 'Explore',
+        'product-5-label': '05 / Industry',
+        'product-5-title': 'Industrial Buildings',
+        'product-5-copy': 'Robust, scalable structures for production and logistics.',
+        'product-5-link': 'Explore',
+        'product-6-label': '06 / ALFA DEKOR',
+        'product-6-title': 'Marble & Surfaces',
+        'product-6-copy': 'Premium decorative materials shaped for refined interiors.',
+        'product-6-link': 'Explore',
+        // ALFA
+        'alfa-kicker': 'A KASEM GROUP Brand',
+        'alfa-title': 'ALFA<br>DEKOR',
+        'alfa-copy': 'Natural surfaces. Timeless expression. ALFA DEKOR curates marble collections and premium decorative finishes for interiors defined by elegance, materiality and architectural presence.',
+        'alfa-feature-1': 'Marble',
+        'alfa-feature-1-copy': 'Natural Collections',
+        'alfa-feature-2': 'Surfaces',
+        'alfa-feature-2-copy': 'Decorative Finishes',
+        'alfa-feature-3': 'Interiors',
+        'alfa-feature-3-copy': 'Design Solutions',
+        // Event
+        'event-kicker': 'Exhibitions & Events',
+        'event-title': 'BUILDEX Damascus 2026',
+        'event-label': 'Featured Event',
+        'event-copy': 'Join us at BUILDEX Damascus 2026. We look forward to welcoming you and introducing our latest products, innovations and industrial solutions.',
+        'event-register': 'Register Interest',
+        'event-contact': 'Contact Us',
+        'countdown-days-label': 'Days',
+        'countdown-hours-label': 'Hours',
+        'countdown-minutes-label': 'Minutes',
+        'countdown-seconds-label': 'Seconds',
+        // Partners
+        'partners-kicker': 'Our Network',
+        'partners-title': 'Our Partners',
+        'partner-1-title': 'Atlas Engineering',
+        'partner-1-copy': 'Regional engineering collaboration for industrial and infrastructure projects.',
+        'partner-1-link': 'View Partnership',
+        'partner-2-title': 'Nova Materials',
+        'partner-2-copy': 'Specialized materials and envelope systems supply partnership.',
+        'partner-2-link': 'View Partnership',
+        'partner-3-title': 'Meridian Build',
+        'partner-3-copy': 'Execution and project delivery collaboration across key markets.',
+        'partner-3-link': 'View Partnership',
+        'partner-4-title': 'Stonehaus',
+        'partner-4-copy': 'Premium interiors and architectural finish collaboration.',
+        'partner-4-link': 'View Partnership',
+        // Partnership
+        'partner-kicker': 'Partnership',
+        'partner-title': 'We Welcome Strategic Partners',
+        'partner-copy': 'Partnering with KASEM GROUP means access to industrial expertise, regional growth opportunities and long-term business development.',
+        'form-company-label': 'Company Name',
+        'form-country-label': 'Country',
+        'form-person-label': 'Contact Person',
+        'form-phone-label': 'Phone',
+        'form-email-label': 'Email',
+        'form-activity-label': 'Business Activity',
+        'form-message-label': 'Message',
+        'form-submit': 'Submit Partnership Request',
+        // Gallery
+        'gallery-kicker': 'Selected Works',
+        'gallery-title': 'Project Gallery',
+        'gallery-1-label': 'Commercial',
+        'gallery-1-title': 'Contemporary Business Hub',
+        'gallery-2-label': 'Industrial',
+        'gallery-2-title': 'Steel Frame Production Complex',
+        'gallery-3-label': 'Residential',
+        'gallery-3-title': 'Urban Modular Living',
+        'gallery-4-label': 'Development',
+        'gallery-4-title': 'Regional Construction Progress',
+        // Contact
+        'contact-kicker': 'Contact',
+        'contact-title': 'Let\'s build what\'s next.',
+        'contact-office-1': 'Head Office',
+        'contact-office-1-title': 'Turkey',
+        'contact-office-1-copy': 'Istanbul, Türkiye<br>+90 000 000 0000<br>info@kasemgroup.com',
+        'contact-office-2': 'Regional Branch',
+        'contact-office-2-title': 'Damascus, Syria',
+        'contact-office-2-copy': 'Damascus, Syria<br>+963 000 000 000<br>syria@kasemgroup.com',
+        'contact-whatsapp': 'WhatsApp',
+        'contact-email': 'Email Us',
+        'map-label': 'KASEM GROUP',
+        'map-copy': 'Turkey · Syria · Regional Network',
+        // Footer
+        'footer-brand': 'KASEM GROUP',
+        'footer-copy': 'Modern building systems. Industrial excellence. Regional vision.',
+        'footer-links-title': 'Quick Links',
+        'footer-link-1': 'About Us',
+        'footer-link-2': 'Products',
+        'footer-link-3': 'ALFA DEKOR',
+        'footer-contact-title': 'Contact',
+        'footer-contact-copy': 'Turkey Head Office<br>Damascus Branch<br>info@kasemgroup.com',
+        'footer-follow-title': 'Follow',
+        'footer-copyright': '© KASEM GROUP. All Rights Reserved.'
+      }
+    };
+
+    let currentLang = 'en';
+
+    function updateAllContent(lang) {
+      currentLang = lang;
+      const content = translations[lang];
+      
+      // Update all elements with data-template-id
+      Object.keys(content).forEach(key => {
+        const elements = document.querySelectorAll(`[data-template-id="${key}"]`);
+        elements.forEach(el => {
+          if (key.includes('title') && !key.includes('nav-') && !key.includes('contact-office')) {
+            el.innerHTML = content[key];
+          } else {
+            el.textContent = content[key];
+          }
+        });
+      });
+
+      // Update document direction
+      const dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.dir = dir;
+      document.documentElement.lang = lang;
+      document.body.dir = dir;
+
+      // Update language button styling
+      const langAr = document.getElementById('langAr');
+      const langTr = document.getElementById('langTr');
+      const langEn = document.getElementById('langEn');
+      if (lang === 'ar') {
+        langAr.classList.add('text-[#d6bf7c]');
+        langTr.classList.remove('text-[#d6bf7c]');
+        langEn.classList.remove('text-[#d6bf7c]');
+      } else if (lang === 'tr') {
+        langTr.classList.add('text-[#d6bf7c]');
+        langAr.classList.remove('text-[#d6bf7c]');
+        langEn.classList.remove('text-[#d6bf7c]');
+      } else {
+        langEn.classList.add('text-[#d6bf7c]');
+        langAr.classList.remove('text-[#d6bf7c]');
+        langTr.classList.remove('text-[#d6bf7c]');
+      }
+    }
+
+    document.getElementById('langAr').addEventListener('click', () => updateAllContent('ar'));
+    document.getElementById('langTr').addEventListener('click', () => updateAllContent('tr'));
+    document.getElementById('langEn').addEventListener('click', () => updateAllContent('en'));
+
+    let records = [];
+    const toast = document.getElementById('toast');
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3200);
+    }
+
+    const dataHandler = {
+      onDataChanged(data) {
+        records = data;
+      }
+    };
+
+    async function initData() {
+      const result = await window.dataSdk.init(dataHandler);
+      if (!result.isOk) {
+        showToast('Unable to connect form storage.');
+      }
+    }
+    initData();
+
+    const form = document.getElementById('partnerForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        formStatus.textContent = 'Please complete all required fields.';
+        return;
+      }
+
+      if (records.length >= 999) {
+        formStatus.textContent = 'Submission limit reached. Please contact us directly.';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Submitting...';
+      formStatus.textContent = '';
+
+      const formData = new FormData(form);
+      const payload = {
+        type: 'partnership',
+        company_name: formData.get('company_name'),
+        country: formData.get('country'),
+        contact_person: formData.get('contact_person'),
+        phone: formData.get('phone'),
+        email: formData.get('email'),
+        business_activity: formData.get('business_activity'),
+        message: formData.get('message'),
+        submitted_at: new Date().toISOString()
+      };
+
+      const result = await window.dataSdk.create(payload);
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+      submitBtn.textContent = originalText;
+
+      if (result.isOk) {
+        form.reset();
+        formStatus.textContent = 'Thank you. Your request has been received.';
+        showToast('Partnership request submitted successfully.');
+      } else {
+        formStatus.textContent = 'We could not submit your request. Please try again.';
+      }
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a08cba119ccdf495',t:'MTc4MDk3MjM1Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
