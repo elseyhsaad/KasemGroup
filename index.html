@@ -1392,12 +1392,17 @@ document.getElementById("partnerForm").addEventListener("submit", function(e) {
       // Update all elements with data-template-id
       Object.keys(content).forEach(key => {
         const elements = document.querySelectorAll(`[data-template-id="${key}"]`);
-        elements.forEach(el => {
-          if (key.includes('title') && !key.includes('nav-') && !key.includes('contact-office')) {
-            el.innerHTML = content[key];
-          } else {
-            el.textContent = content[key];
-          }
+       elements.forEach(el => {
+      if(
+          key.includes('title') ||
+          key === 'contact-office-1-copy' ||
+          key === 'contact-office-2-copy' ||
+          key === 'footer-contact-copy'
+        )  {
+        el.innerHTML = content[key];
+           } else {
+          el.textContent = content[key];
+           }
         });
       });
 
